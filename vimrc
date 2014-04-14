@@ -1,6 +1,4 @@
-if $SHELL =~ 'fish'
-set shell='/bin/bash'
-endif
+set nocompatible
 
 set backupdir=~/.vim/bkup               " Directories for bkup files
 set directory=~/.vim/bkup               " Directories for swp files
@@ -8,7 +6,6 @@ set directory=~/.vim/bkup               " Directories for swp files
 set encoding=utf-8                      " The encoding displayed.
 set fileencoding=utf-8                  " The encoding written to file.
 
-set nocompatible                        " be iMproved, required for Vundle
 filetype off                            " required for Vundle
 
 " prevent going into Ex mode
@@ -126,7 +123,7 @@ let g:airline_powerline_fonts = 1               " needed for powerline symbols
 " visualization of vim markers
 Bundle "kshenoy/vim-signature" 
 
-set term=screen-256color-bce
+set term=screen-256color
 syntax on
 set number
 set ruler
@@ -246,22 +243,29 @@ nnoremap <leader>s <C-w>s<C-w>l
 " set hidden
 
 " remove ability to use arrow keys (help force vim level up)
-function! ArrowsOff()
-  map <up> <nop>
-  map <down> <nop>
-  map <left> <nop>
-  map <right> <nop>
-  imap <up> <nop>
-  imap <down> <nop>
-  imap <left> <nop>
-  imap <right> <nop>
-endfunc
-call ArrowsOff()
+"function! ArrowsOff()
+"  map <up> <nop>
+"  map <down> <nop>
+"  map <left> <nop>
+"  map <right> <nop>
+"  imap <up> <nop>
+"  imap <down> <nop>
+"  imap <left> <nop>
+"  imap <right> <nop>
+"endfunc
+" Fuck that shit.
+" call ArrowsOff()
+
+
+imap ^[OA <ESC>ki
+imap ^[OB <ESC>ji
+imap ^[OC <ESC>li
+imap ^[OD <ESC>hi
 
 " sytax highlighting for ejs files
 au BufNewFile,BufRead *.ejs set filetype=html
 
-nnoremap <leader>k :call ArrowsOn() <CR>
+"nnoremap <leader>k :call ArrowsOn() <CR>
 
 filetype plugin indent on                        " required for Vundle
 
