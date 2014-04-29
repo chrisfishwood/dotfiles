@@ -121,7 +121,7 @@ Bundle "edkolev/tmuxline.vim"
 let g:airline_powerline_fonts = 1               " needed for powerline symbols
 
 " visualization of vim markers
-Bundle "kshenoy/vim-signature" 
+Bundle "kshenoy/vim-signature"
 
 set term=screen-256color
 syntax on
@@ -262,6 +262,7 @@ imap ^[OB <ESC>ji
 imap ^[OC <ESC>li
 imap ^[OD <ESC>hi
 
+
 " sytax highlighting for ejs files
 au BufNewFile,BufRead *.ejs set filetype=html
 
@@ -269,57 +270,4 @@ au BufNewFile,BufRead *.ejs set filetype=html
 
 filetype plugin indent on                        " required for Vundle
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" vimrc graveyard (below are items no longer being used)
-"
-  "" Map command-[ and command-] to indenting or outdenting
-  "" while keeping the original selection in visual mode
-  "vmap <D-]> >gv
-  "vmap <D-[> <gv
-
-  "nmap <D-]> >>
-  "nmap <D-[> <<
-
-  "omap <D-]> >>
-  "omap <D-[> <<
-
-  "imap <D-]> <Esc>>>i
-  "imap <D-[> <Esc><<i
-"
-" Add rspec runner
-"Bundle 'thoughtbot/vim-rspec'
-"map <Leader>t :call RunCurrentSpecFile()<CR>
-"map <Leader>s :call RunNearestSpec()<CR>
-"map <Leader>l :call RunLastSpec()<CR>
-"map <Leader>a :call RunAllSpecs()<CR>
-"let g:rspec_command = "!bundle exec rspec"
-
-" Bundle "skwp/vim-rspec"
-"
-
-
-  " Start the status line
-  "set statusline=%f\ %m\ %r
-  "set statusline+=Line:%l/%L[%p%%]
-  "set statusline+=Col:%v
-  "set statusline+=Buf:#%n
-  "set statusline+=[%b][0x%B]
-"""""""""""""""""""""""""""""""""""""""""
-" janus settings (taken from janus core/before)
-"""""""""""""""""""""""""""""""""""""""""
-"if has("autocmd")
-  "if exists("g:autosave_on_blur")
-    "au FocusLost * silent! wall
-  "endif
-"endif
-"source $HOME/.vim/settings/filetypes.vim
-"source $HOME/.vim/settings/gui_settings.vim
-"source $HOME/.vim/settings/mappings.vim
-"source $HOME/.vim/settings/settings.vim
-"source $HOME/.vim/settings/statusline.vim
-
-"Bundle "rgarver/Kwbd.vim"
-"Bundle "petdance/ack2" (replaced by ag)
-" unite for file searching
-"Bundle "Shougo/unite.vim"
-"nnoremap f :Unite -start-insert file
+nnoremap f :Unite -start-insert file

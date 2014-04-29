@@ -66,15 +66,15 @@ export PATH=~/bin:/usr/local/bin:$PATH
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
 
-#alias tmux="TERM=screen-256color-bce tmux"
-#export TERM=screen-256color-bce
+# alias wemux="TERM=screen-256color-bce wemux"
+export TERM=screen-256color-bce
 
 #git autocomplete
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-set -o vi
+#set -o vi
 
 alias ll='ls -alh'
 alias mysql=/usr/local/Cellar/mysql/5.6.16/bin/mysql
@@ -112,6 +112,8 @@ alias glogp='git log --pretty=format:"%h %s" --graph'
 alias gl='git log --color --graph --pretty=format:"Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
 
 alias be='bundle exec '
+alias berc='bundle exec rake rails c'
+alias bers='bundle exec rake rails s'
 alias ber='bundle exec rake'
 alias bergj='bundle exec rake guard:jasmine'
 
