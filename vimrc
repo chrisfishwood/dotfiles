@@ -39,14 +39,14 @@ Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 
 " Add number toggle (relative)
-Bundle "jeffkreeftmeijer/vim-numbertoggle"
+"Bundle "jeffkreeftmeijer/vim-numbertoggle"
 
-" Add vim test runner
-Bundle "ToadJamb/vim_test_runner"
+"" Add vim test runner
+"Bundle "ToadJamb/vim_test_runner"
 
-" vim test runner keys
-map <silent> <leader>t :call tt:TriggerTest()<CR>
-map <silent> <leader>r :call tt:TriggerPreviousTest()<CR>
+"" vim test runner keys
+"map <silent> <leader>t :call tt:TriggerTest()<CR>
+"map <silent> <leader>r :call tt:TriggerPreviousTest()<CR>
 
 " Language support
 " livescript
@@ -114,7 +114,7 @@ Bundle "airblade/vim-rooter"
 
 " vim airline (powerline-like theme)
 Bundle 'bling/vim-airline'
-let g:airline#extensions#tabline#enabled = 1    " add buffer tabs to top
+"let g:airline#extensions#tabline#enabled = 1    " add buffer tabs to top
 
 " plugin to create airline theme for tmux
 Bundle "edkolev/tmuxline.vim"
@@ -122,6 +122,10 @@ let g:airline_powerline_fonts = 1               " needed for powerline symbols
 
 " visualization of vim markers
 Bundle "kshenoy/vim-signature"
+
+Bundle "slim-template/vim-slim.git"
+syntax enable
+filetype plugin indent on
 
 set term=screen-256color
 syntax on
@@ -198,7 +202,7 @@ highlight ColorColumn ctermbg=232 guibg=#202020
     "autocmd!
     "autocmd WinEnter * let &colorcolumn=join(range(81,999),",")
     "autocmd WinLeave * let &colorcolumn=join(range(1,999),",")
-"augroup END
+"augroup ND
 
 " only show highlighted line in active pane
 augroup BgHighlight
@@ -206,7 +210,7 @@ augroup BgHighlight
     autocmd WinEnter * set cul
     autocmd WinLeave * set nocul
 augroup END
-"
+""
 " remap jj to escape
 inoremap jj <esc>
 "
@@ -242,19 +246,24 @@ nnoremap <leader>s <C-w>s<C-w>l
 " allows switching between unsaved buffers
 " set hidden
 
+" remap h to insert and use ijkl for inverse T cursor movement
+map h <insert>
+map i <Up>
+map j <Left>
+map k <Down>
+
+"save delete inner word
+ounmap i
+ounmap h
+
 " remove ability to use arrow keys (help force vim level up)
-"function! ArrowsOff()
-"  map <up> <nop>
-"  map <down> <nop>
-"  map <left> <nop>
-"  map <right> <nop>
-"  imap <up> <nop>
-"  imap <down> <nop>
-"  imap <left> <nop>
-"  imap <right> <nop>
+"function! ArrowsOn()
+  "imap <up> <nop>
+  "imap <down> <nop>
+  "imap <left> <nop>
+  "imap <right> <nop>
 "endfunc
-" Fuck that shit.
-" call ArrowsOff()
+ "call ArrowsOn()
 
 
 imap ^[OA <ESC>ki
