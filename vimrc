@@ -22,113 +22,115 @@ map Q <Nop>
 " autocmd InsertLeave * set iminsert=0
 
 " set runtime path for Vundle
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 " intialize Vundle
-call vundle#rc()
+call vundle#begin()
 
 " let Vundle manage Vundle, required
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " color theme
-Bundle "nanotech/jellybeans.vim"
+Plugin 'nanotech/jellybeans.vim'
 
 " add vim snipmate
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "garbas/vim-snipmate"
-Bundle "honza/vim-snippets"
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+Plugin 'honza/vim-snippets'
 
 " Add number toggle (relative)
-" Bundle "jeffkreeftmeijer/vim-numbertoggle"
+" Plugin 'jeffkreeftmeijer/vim-numbertoggle'
 
 " Add vim test runner
-" Bundle "ToadJamb/vim_test_runner"
+" Plugin 'ToadJamb/vim_test_runner'
 
 " vim test runner keys
 map <silent> <leader>t :call tt:TriggerTest()<CR>
 map <silent> <leader>r :call tt:TriggerPreviousTest()<CR>
 
 " vim/slim
-Bundle 'slim-template/vim-slim.git'
+Plugin 'slim-template/vim-slim.git'
 
 " indentation
-Bundle 'nathanaelkane/vim-indent-guides'
+Plugin 'nathanaelkane/vim-indent-guides'
 
 " Language support
 " livescript
-Bundle "gkz/vim-ls"
-Bundle "tpope/vim-rails"
-Bundle "tpope/vim-markdown"
-Bundle "tpope/vim-git"
-Bundle "tpope/vim-obsession"
-Bundle "vim-ruby/vim-ruby"
-Bundle "pangloss/vim-javascript"
-Bundle "sunaku/vim-ruby-minitest"
-Bundle "cakebaker/scss-syntax.vim"
-Bundle "kchmck/vim-coffee-script"
-Bundle "chrisbra/csv.vim"
+Plugin 'gkz/vim-ls'
+Plugin 'tpope/vim-rails'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-git'
+Plugin 'tpope/vim-obsession'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'pangloss/vim-javascript'
+Plugin 'sunaku/vim-ruby-minitest'
+Plugin 'cakebaker/scss-syntax.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'chrisbra/csv.vim'
 
 " allow seamless TMUX / VIM integration
-Bundle 'christoomey/vim-tmux-navigator'
+Plugin 'christoomey/vim-tmux-navigator'
 
 " allow git changes to be seen in gutter
-Bundle 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 
 " ag the silver searcher
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 
 " show buffers
-Bundle "jeetsukumaran/vim-buffergator"
+Plugin 'jeetsukumaran/vim-buffergator'
 
 " use unimpaired for buffer switching [-b and ]-b
 " also used for line bubbling
-Bundle "tpope/vim-unimpaired"
+Plugin 'tpope/vim-unimpaired'
 
 " file files, CTRLP mapped to F
 let g:ctrlp_map = 'F'
-Bundle "kien/ctrlp.vim"
+Plugin 'kien/ctrlp.vim'
 
 " Janus libraries
-Bundle "ap/vim-css-color"
-Bundle "tpope/vim-dispatch"
-Bundle "tpope/vim-endwise"
-Bundle "Lokaltog/vim-easymotion"
-Bundle "tpope/vim-eunuch"
-Bundle "tpope/vim-fugitive"
-Bundle "mattn/gist-vim"
-Bundle "sjl/gundo.vim"
-Bundle "edsono/vim-matchit"
-Bundle "terryma/vim-multiple-cursors"
-Bundle "chrisbra/NrrwRgn"
-Bundle "scrooloose/nerdcommenter"
-Bundle "scrooloose/nerdtree"
-Bundle "tpope/vim-repeat"
-Bundle "ervandew/supertab"
-Bundle "tpope/vim-surround"
-Bundle "scrooloose/syntastic"
-Bundle "majutsushi/tagbar"
-Bundle "bronson/vim-trailing-whitespace"
-Bundle "vim-scripts/vimwiki"
-Bundle "thinca/vim-visualstar"
-Bundle "skalnik/vim-vroom"
-Bundle "mattn/webapi-vim"
+Plugin 'ap/vim-css-color'
+Plugin 'tpope/vim-dispatch'
+Plugin 'tpope/vim-endwise'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'tpope/vim-eunuch'
+Plugin 'tpope/vim-fugitive'
+Plugin 'mattn/gist-vim'
+Plugin 'sjl/gundo.vim'
+Plugin 'edsono/vim-matchit'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'chrisbra/NrrwRgn'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-repeat'
+Plugin 'ervandew/supertab'
+Plugin 'tpope/vim-surround'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'vim-scripts/vimwiki'
+Plugin 'thinca/vim-visualstar'
+Plugin 'skalnik/vim-vroom'
+Plugin 'mattn/webapi-vim'
 
 " Zoom in and out of current pane (C-W, O)
-Bundle "itspriddle/ZoomWin"
+Plugin 'itspriddle/ZoomWin'
 
 " set vim root to the project root
-Bundle "airblade/vim-rooter"
+Plugin 'airblade/vim-rooter'
 
 " vim airline (powerline-like theme)
-Bundle 'bling/vim-airline'
+Plugin 'bling/vim-airline'
 let g:airline#extensions#tabline#enabled = 1    " add buffer tabs to top
 
 " plugin to create airline theme for tmux
-Bundle "edkolev/tmuxline.vim"
+Plugin 'edkolev/tmuxline.vim'
 let g:airline_powerline_fonts = 1               " needed for powerline symbols
 
 " visualization of vim markers
-Bundle "kshenoy/vim-signature"
+Plugin 'kshenoy/vim-signature'
+
+call vundle#end()
 
 set term=screen-256color
 syntax on
