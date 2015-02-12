@@ -1,32 +1,27 @@
 
-install macvim via 
+install macvim via
 ```
 brew install macvim
 ```
 
-install TMUX via 
+install wemux via
 
 ```
-brew install tmux
+brew install wemux
 ```
 
-install janis via 
 ```
-curl -Lo- https://bit.ly/janus-bootstrap | bash
+brew install reattach-to-user-namespace
 ```
 
-note:  In iTerm2, in Preferences -> Profiles -> Terminal, under "Terminal Emulation" you have "Report Terminal Type:" set to screen-256color.
+
+Install Sauce Code powerline fonts in the dotfiles folder.
+
+In iTerm2, in Preferences -> Profiles -> Terminal, under "Terminal Emulation" you have "Report Terminal Type:" set to screen-256color. (silence that bell while you are there)
+In iTerm2, in Preferences -> Profiles -> Text, set both fonts to 14pt Sauce Code
 
 also will want to set the colorscheme of iterm2 to match the colorscheme being used
 
-Note:  TMUX will probably require you to install the following (you'll
-know cause it will error on boot).
+Open vim and run :PluginInstall
 
-brew install reattach-to-user-namespace
-
-todos:
-vimrc currently is a symbolic link specific to my system.  need
-to fix this.
-
-.vim is currently not a symbolic link and should be, for now manually
-corrected
+Hack all the codes.
