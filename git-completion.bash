@@ -1013,6 +1013,11 @@ _git_bundle ()
 	esac
 }
 
+_gco ()
+{
+  _git_checkout
+}
+
 _git_checkout ()
 {
 	__git_has_doubledash && return
