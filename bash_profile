@@ -75,6 +75,7 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 #set -o vi
+alias psql=/Applications/Postgres.app/Contents/MacOS/bin/psql
 
 alias ll='ls -alh'
 alias mysql=/usr/local/Cellar/mysql/5.6.16/bin/mysql
@@ -110,6 +111,8 @@ alias gcotb='git checkout --track -b'
 alias glog='git log'
 alias glogp='git log --pretty=format:"%h %s" --graph'
 alias gl='git log --color --graph --pretty=format:"Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+alias blam='git push origin `git symbolic-ref HEAD 2>/dev/null`'
+alias kablam='blam -f'
 
 alias be='bundle exec '
 alias berc='bundle exec rake rails c'
@@ -146,3 +149,14 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export PS1="\w\[\033[32m\]\$(parse_git_branch)\[\033[00m\] $ "
+
+
+#chaffee
+function b() {
+  token=`cat .tracker`
+  story_id=$1
+  curl --silent -X GET -H "X-TrackerToken: $token" "https://www.pivotaltracker.com/services/v5/stories/${story_id}" | \
+    ruby -rjson -e "story=JSON.parse(STDIN.read); \
+    puts story['story_type'] + '/' + story['name'].chomp.downcase.gsub(/[\s\.]+/,'-').gsub(/[^\w-]/, '') + '-${story_id}'"
+}
+

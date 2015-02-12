@@ -39,27 +39,34 @@ Bundle "garbas/vim-snipmate"
 Bundle "honza/vim-snippets"
 
 " Add number toggle (relative)
-"Bundle "jeffkreeftmeijer/vim-numbertoggle"
+" Bundle "jeffkreeftmeijer/vim-numbertoggle"
 
-"" Add vim test runner
-"Bundle "ToadJamb/vim_test_runner"
+" Add vim test runner
+" Bundle "ToadJamb/vim_test_runner"
 
-"" vim test runner keys
-"map <silent> <leader>t :call tt:TriggerTest()<CR>
-"map <silent> <leader>r :call tt:TriggerPreviousTest()<CR>
+" vim test runner keys
+map <silent> <leader>t :call tt:TriggerTest()<CR>
+map <silent> <leader>r :call tt:TriggerPreviousTest()<CR>
+
+" vim/slim
+Bundle 'slim-template/vim-slim.git'
+
+" indentation
+Bundle 'nathanaelkane/vim-indent-guides'
 
 " Language support
 " livescript
 Bundle "gkz/vim-ls"
 Bundle "tpope/vim-rails"
+Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-git"
+Bundle "tpope/vim-obsession"
 Bundle "vim-ruby/vim-ruby"
 Bundle "pangloss/vim-javascript"
 Bundle "sunaku/vim-ruby-minitest"
-Bundle "tpope/vim-markdown"
 Bundle "cakebaker/scss-syntax.vim"
 Bundle "kchmck/vim-coffee-script"
 Bundle "chrisbra/csv.vim"
-Bundle "tpope/vim-git"
 
 " allow seamless TMUX / VIM integration
 Bundle 'christoomey/vim-tmux-navigator'
@@ -114,7 +121,7 @@ Bundle "airblade/vim-rooter"
 
 " vim airline (powerline-like theme)
 Bundle 'bling/vim-airline'
-"let g:airline#extensions#tabline#enabled = 1    " add buffer tabs to top
+let g:airline#extensions#tabline#enabled = 1    " add buffer tabs to top
 
 " plugin to create airline theme for tmux
 Bundle "edkolev/tmuxline.vim"
@@ -122,10 +129,6 @@ let g:airline_powerline_fonts = 1               " needed for powerline symbols
 
 " visualization of vim markers
 Bundle "kshenoy/vim-signature"
-
-Bundle "slim-template/vim-slim.git"
-syntax enable
-filetype plugin indent on
 
 set term=screen-256color
 syntax on
@@ -152,6 +155,10 @@ set expandtab ts=2 sw=2 ai
 set autoindent
 set smartindent
 
+" indentation
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_guide_size=1
+let g:indent_guides_exclude_filetypes = ['help', 'nerdtree']
 " set the cursor to a vertical line in insert mode and a solid block
 " in command mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -197,12 +204,15 @@ hi CursorLine cterm=underline ctermbg=NONE
 let &colorcolumn=join(range(81,999),",")
 highlight ColorColumn ctermbg=232 guibg=#202020
 
+" NERDTree <leader>n
+ map <leader>n :NERDTreeToggle<CR>
+
 " Dim inactive windows, highlight line 80 for active window.
 "augroup BgHighlight
     "autocmd!
     "autocmd WinEnter * let &colorcolumn=join(range(81,999),",")
     "autocmd WinLeave * let &colorcolumn=join(range(1,999),",")
-"augroup ND
+"augroup END
 
 " only show highlighted line in active pane
 augroup BgHighlight
@@ -210,7 +220,7 @@ augroup BgHighlight
     autocmd WinEnter * set cul
     autocmd WinLeave * set nocul
 augroup END
-""
+"
 " remap jj to escape
 inoremap jj <esc>
 "
@@ -234,7 +244,11 @@ nnoremap <leader>a :Ag
 nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>s <C-w>s<C-w>l
 
+"fatfingers
+cnoreabbrev Q q
+cnoreabbrev E e
 " window resizing
+
 "if bufwinnr(1)
   "map + <C-W>+
   "map _ <C-W>-
@@ -246,24 +260,19 @@ nnoremap <leader>s <C-w>s<C-w>l
 " allows switching between unsaved buffers
 " set hidden
 
-" remap h to insert and use ijkl for inverse T cursor movement
-map h <insert>
-map i <Up>
-map j <Left>
-map k <Down>
-
-"save delete inner word
-ounmap i
-ounmap h
-
 " remove ability to use arrow keys (help force vim level up)
-"function! ArrowsOn()
-  "imap <up> <nop>
-  "imap <down> <nop>
-  "imap <left> <nop>
-  "imap <right> <nop>
+"function! ArrowsOff()
+"  map <up> <nop>
+"  map <down> <nop>
+"  map <left> <nop>
+"  map <right> <nop>
+"  imap <up> <nop>
+"  imap <down> <nop>
+"  imap <left> <nop>
+"  imap <right> <nop>
 "endfunc
- "call ArrowsOn()
+" Fuck that shit.
+" call ArrowsOff()
 
 
 imap ^[OA <ESC>ki
