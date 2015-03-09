@@ -75,11 +75,7 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 #set -o vi
-alias psql=/Applications/Postgres.app/Contents/MacOS/bin/psql
-
 alias ll='ls -alh'
-alias mysql=/usr/local/Cellar/mysql/5.6.16/bin/mysql
-alias mysqladmin=/usr/local/Cellar/mysql/5.6.16/bin/mysqladmin
 
 # use mvim inplace of vim (better integration with mac)
 
