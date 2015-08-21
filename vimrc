@@ -130,6 +130,10 @@ let g:airline_powerline_fonts = 1               " needed for powerline symbols
 " visualization of vim markers
 Plugin 'kshenoy/vim-signature'
 
+Plugin 'vim-scripts/vim-auto-save'
+let g:auto_save = 1
+let g:auto_save_in_insert_mode = 0
+
 call vundle#end()
 
 set term=screen-256color
@@ -224,6 +228,9 @@ augroup BgHighlight
 augroup END
 "
 " remap jj to escape
+inoremap jjwq <esc> :wq<CR>
+inoremap jjq <esc> :q<CR>
+inoremap jjw <esc> :w<CR>
 inoremap jj <esc>
 "
 " easier split navigation

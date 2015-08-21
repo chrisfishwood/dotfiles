@@ -2,7 +2,7 @@
 	name = Chris Steinmeyer
 	email = csteinmeyer@gmail.com
 [alias]
-  par = "!f() { cur=$(git symbolic-ref --quiet --short HEAD 2> /dev/null); git checkout $1; git pull origin $1; echo --${cur}--; git checkout ${cur}; git rebase $1; }; f"
+  par = "!f() { cur=$(git symbolic-ref --quiet --short HEAD 2> /dev/null); git checkout $1; git pull origin $1; echo --${cur}--; git checkout ${cur}; git rebase -i $1; }; f"
 [push]
         default = current
 [pull]
