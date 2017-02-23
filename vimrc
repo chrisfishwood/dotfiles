@@ -67,6 +67,8 @@ Plugin 'sunaku/vim-ruby-minitest'
 Plugin 'cakebaker/scss-syntax.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'chrisbra/csv.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'slashmili/alchemist.vim'
 
 " allow seamless TMUX / VIM integration
 Plugin 'christoomey/vim-tmux-navigator'
@@ -131,6 +133,7 @@ let g:airline_powerline_fonts = 1               " needed for powerline symbols
 Plugin 'kshenoy/vim-signature'
 
 Plugin 'vim-scripts/vim-auto-save'
+let g:auto_save_no_updatetime = 600
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
 
@@ -212,6 +215,7 @@ highlight ColorColumn ctermbg=232 guibg=#202020
 
 " NERDTree <leader>n
  map <leader>n :NERDTreeToggle<CR>
+let NERDTreeShowHidden=1
 
 " Dim inactive windows, highlight line 80 for active window.
 "augroup BgHighlight

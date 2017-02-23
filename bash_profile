@@ -58,7 +58,7 @@ export GIT_PROMPT_END="$CYAN \n$(end) $WHITE"
 
 #source ~/dotfiles/bash_files/bash-git-prompt/gitprompt.sh
 
-export PATH=~/bin:/usr/local/bin:$PATH
+export PATH=~/bin:/usr/local/bin:~/Library/Android/sdk/tools:$PATH
 
 # Macports installer addition
 #export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -120,21 +120,17 @@ alias bergj='bundle exec rake guard:jasmine'
 alias vim_test_runner='ruby ~/.vim/bundle/vim_test_runner/test_runner'
 alias rspec="bundle exec rspec"
 
+alias d='docker '
+alias dc='docker-compose '
+alias dm='docker-machine '
+
+alias mps='mix phoenix.server'
+alias mdg='mix deps.get'
 
 # disable XON/XOFF flow control (hitting ctrl-s can cause this)
 # stty -ixon
 #
 
-
-GROOVY_HOME=/usr/share/groovy
-export GROOVY_HOME
-PATH=$GROOVY_HOME/bin:$PATH
-GRAILS_HOME=/usr/share/grails
-export GRAILS_HOME
-PATH=$GRAILS_HOME/bin:$PATH
-
-export PATH
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
@@ -156,3 +152,5 @@ function b() {
     puts story['story_type'] + '/' + story['name'].chomp.downcase.gsub(/[\s\.]+/,'-').gsub(/[^\w-]/, '') + '-${story_id}'"
 }
 
+[[ -s "$HOME/.avn/bin/avn.sh" ]] && source "$HOME/.avn/bin/avn.sh" # load avn
+source ~/.bashrc
