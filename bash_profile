@@ -58,7 +58,7 @@ export GIT_PROMPT_END="$CYAN \n$(end) $WHITE"
 
 #source ~/dotfiles/bash_files/bash-git-prompt/gitprompt.sh
 
-export PATH=~/bin:/usr/local/bin:~/Library/Android/sdk/tools:$PATH
+export PATH=~/.cargo/bin:~/bin:/usr/local/bin:~/Library/Android/sdk/tools:$PATH
 
 # Macports installer addition
 #export PATH=/opt/local/bin:/opt/local/sbin:$PATH
